@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Silence</title><meta name="description"><meta name="author" content="twf"><meta name="copyright" content="twf"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/page/5/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Silence"><meta property="og:url" content="http://yoursite.com/page/5/"><meta property="og:site_name" content="Silence"><meta property="og:description"><meta property="og:image" content="http://yoursite.com/img/default-avatar.webp"><meta property="article:published_time" content="2020-09-18T15:13:44.980Z"><meta property="article:modified_time" content="2020-09-18T15:13:44.980Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-09-18 23:13:44'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 5.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/default-avatar.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">81</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">30</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">20</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1597080609020&amp;di=971011fdab96874c66db0778df3cb768&amp;imgtype=0&amp;src=http%3A%2F%2Fstatic.oneplus.cn%2Fdata%2Fattachment%2Fforum%2F201901%2F18%2F192128ps8dm155u15n5ro5.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Silence</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Silence</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/1335402049" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1335402049@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/05/05/Jenkins%E6%89%93%E5%8C%85GitHub%E9%A1%B9%E7%9B%AE/" title="Jenkins打包GitHub项目">     <img class="post_bg" data-lazy-src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1597248734973&amp;di=f5209af1b40f905a8926791f8fd17e24&amp;imgtype=0&amp;src=http%3A%2F%2Fblog.nsfocus.net%2Fwp-content%2Fuploads%2F2017%2F12%2FJenkins-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins打包GitHub项目"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/05/Jenkins%E6%89%93%E5%8C%85GitHub%E9%A1%B9%E7%9B%AE/" title="Jenkins打包GitHub项目">Jenkins打包GitHub项目</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-05T11:58:15.000Z" title="发表于 2020-05-05 19:58:15">2020-05-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Jenkins/">Jenkins</a></span></div><div class="content">首先先去Manage Jenkins-&gt;Global Tool Configuration配置好安装的maven
+
+然后创建一个freestyle job,我这边名称是renren-fast,最后构建成功
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/05/04/%E8%A7%A3%E5%86%B3Jenkins%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/" title="解决Jenkins插件下载慢问题">     <img class="post_bg" data-lazy-src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1597248734973&amp;di=f5209af1b40f905a8926791f8fd17e24&amp;imgtype=0&amp;src=http%3A%2F%2Fblog.nsfocus.net%2Fwp-content%2Fuploads%2F2017%2F12%2FJenkins-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决Jenkins插件下载慢问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/04/%E8%A7%A3%E5%86%B3Jenkins%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%85%A2%E9%97%AE%E9%A2%98/" title="解决Jenkins插件下载慢问题">解决Jenkins插件下载慢问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-04T03:40:10.000Z" title="发表于 2020-05-04 11:40:10">2020-05-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Jenkins/">Jenkins</a></span></div><div class="content">jenkins下载的插件可能由于网络的原因下载失败，我们需要配置他插件下载的地址
+
+#找到default.json文件find / -name default.json#进入default.json目录下，执行sed -i &#x27;s/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g&#x27; default.jsonsed -i &#x27;s/http:\/\/www.google.com/https:\/\/www.baidu.com/g&#x27; default.json
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/05/01/Jenkins%E9%9B%86%E6%88%90GitHub/" title="Jenkins集成GitHub">     <img class="post_bg" data-lazy-src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1597248734973&amp;di=f5209af1b40f905a8926791f8fd17e24&amp;imgtype=0&amp;src=http%3A%2F%2Fblog.nsfocus.net%2Fwp-content%2Fuploads%2F2017%2F12%2FJenkins-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins集成GitHub"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/05/01/Jenkins%E9%9B%86%E6%88%90GitHub/" title="Jenkins集成GitHub">Jenkins集成GitHub</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-01T11:35:19.000Z" title="发表于 2020-05-01 19:35:19">2020-05-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Jenkins/">Jenkins</a></span></div><div class="content">安装git首先保证jenkins服务器安装git
+
+yum install -y git
+
+创建repositories，添加一个文本
+生成ssh密钥ssh-keygen -t rsa -C &quot;root@example.com&quot;
+
+复制id_rsa.pub文件内容到GitHub的SSH keys
+添加jenkins凭据
+构建freestyle job
+最后点击Build with Parameters进行job构建
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/19/Linux%E4%B8%8BMaven%E5%AE%89%E8%A3%85/" title="Linux下Maven安装">     <img class="post_bg" data-lazy-src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1600186997379&amp;di=e580589bd845d1ad302401c186a4ff45&amp;imgtype=0&amp;src=http%3A%2F%2Fpic.zhezhier.com%2Fthumb%2F195x123%2F7%2Fe1%2F7e1cb8e0deac9cb878370bdd80b86210.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux下Maven安装"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/19/Linux%E4%B8%8BMaven%E5%AE%89%E8%A3%85/" title="Linux下Maven安装">Linux下Maven安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-19T12:05:09.000Z" title="发表于 2020-04-19 20:05:09">2020-04-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Maven/">Maven</a></span></div><div class="content">去官网下载maven，http://maven.apache.org/
+
+
+解压tar zxvf apache-maven-3.6.3-bin.tar.gz
+
+配置环境变量vim /etc/profileMAVEN_HOME=/usr/local/mavenPATH=$PATH:$&#123;MAVEN_HOME&#125;/binexport PATH MAVEN_HOME
+如果含有多个PATH环境变量需要配置，使用冒号隔开，比如
+JAVA_HOME=/usr/local/jdkMAVEN_HOME=/usr/local/mavenCLASSPATH=$JAVA_HOME/lib/PATH=$PATH:$JAVA_HOME/bin:$&#123;MAVEN_HOME&#125;/binexport PATH JAVA_HOME CLASSPATH MAVEN_HOME
+
+使环境变量生效source /etc/profile
+
+测试
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/18/MySQL%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E4%B9%8BAtlas/" title="MySQL读写分离之Atlas">     <img class="post_bg" data-lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=865625540,69448143&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL读写分离之Atlas"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/18/MySQL%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E4%B9%8BAtlas/" title="MySQL读写分离之Atlas">MySQL读写分离之Atlas</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-18T01:14:43.000Z" title="发表于 2020-04-18 09:14:43">2020-04-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Atlas/">Atlas</a></span></div><div class="content">前言我们已经部署了MySQL高可用MHA架构，本文基于MHA使用Atlas构建mysql读写分离。
+
+
+安装我们额外选着一台服务器去做Atlas的安装配置下载地址：https://github.com/Qihoo360/Atlas/releases
+yum install -y Atlas*
+
+配置mv test.cnf test.cnf.bakvi test.cnf
+[mysql-proxy]admin-username = useradmin-password = pwdproxy-backend-addresses = 192.168.186.100:3306proxy-read-only-backend-addresses = 192.168.186.133:3306,192.168.186.135:3306pwds = twf:JKEfAH2h9U0a8s/oWZlMvQ==,mha:JKEfAH2h9U0a8s/oWZlMvQ==daemon = truekeepalive = trueevent-threads = 8log-level = messagelog-path ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/15/Jenkins%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" title="Jenkins安装部署">     <img class="post_bg" data-lazy-src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1597248734973&amp;di=f5209af1b40f905a8926791f8fd17e24&amp;imgtype=0&amp;src=http%3A%2F%2Fblog.nsfocus.net%2Fwp-content%2Fuploads%2F2017%2F12%2FJenkins-1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Jenkins安装部署"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/15/Jenkins%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" title="Jenkins安装部署">Jenkins安装部署</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-15T13:33:27.000Z" title="发表于 2020-04-15 21:33:27">2020-04-15</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Jenkins/">Jenkins</a></span></div><div class="content">安装前准备
+#关闭防火墙systemctl stop firewalld#关闭selinuxsetenforce 0
+
+下载rpm包cd /usr/local/src &amp;&amp; wget https://mirrors.tuna.tsinghua.edu.cn/jenkins/redhat-stable/jenkins-2.204.3-1.1.noarch.rpm
+
+导入jenkins库的keyrpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key  
+
+安装jdk1.8yum install -y java-1.8.0-openjdk-*
+
+安装jenkinsyum install -y jenkins
+
+创建jenkins用户useradd deploy
+
+编辑/etc/sysconfig/jenkins文件vim /etc/sysconfig/jenkins
+#修改以下内容JENKINS_USER=&quot;deploy&quot;JENKINS_PORT=&quot;8080&quot;
+
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/13/GitLab%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" title="GitLab安装部署">     <img class="post_bg" data-lazy-src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1597249586541&amp;di=f1fc98982c47aeebece012612030d378&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.cloudfoundry.org%2Fwp-content%2Fuploads%2F2017%2F10%2Ficon_gitlab_cf%402x.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GitLab安装部署"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/13/GitLab%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" title="GitLab安装部署">GitLab安装部署</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-13T13:02:27.000Z" title="发表于 2020-04-13 21:02:27">2020-04-13</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/GitLab/">GitLab</a></span></div><div class="content">安装前准备
+#关闭防火墙systemctl stop firewalld#关闭selinuxsetenforce 0
+
+安装依赖包yum install curl policycoreutils openssh-server openssh-clients postfix -y
+
+启动postfix服务，并设置开机启动systemctl start postfix &amp;&amp; systemctl enable postfix
+
+下载rpm包wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7/gitlab-ce-10.0.6-ce.0.el7.x86_64.rpm
+
+本地安装gitlab-ceyum -y localinstall gitlab-ce-10.0.6-ce.0.el7.x86_64.rpm 
+
+配置（1）创建一个ssl目录
+mkdir -p /etc/gitlab/ssl
+（2）使用openssl创建私有密钥
+openssl genrsa -out &quot;/etc/gitlab/ssl/gi ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/12/Zabbix%E7%9B%91%E6%8E%A7Nginx/" title="Zabbix监控Nginx">     <img class="post_bg" data-lazy-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1497391358,2800491244&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Zabbix监控Nginx"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/12/Zabbix%E7%9B%91%E6%8E%A7Nginx/" title="Zabbix监控Nginx">Zabbix监控Nginx</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-12T05:41:28.000Z" title="发表于 2020-04-12 13:41:28">2020-04-12</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Zabbix/">Zabbix</a></span></div><div class="content">开启nginx status配置location /ngx_status {    stub_status on;    access_log off;}
+
+重启systemctl restart nginx
+
+打开status页面curl http://localhost:8001/ngx_status
+
+编写脚本#!/bin/bash#author: twf#description: zabbix监控nginx性能HOST=&quot;127.0.0.1&quot;PORT=&quot;8001&quot;#检测nginx进程是否存在function ping &#123;        ps -ef |grep nginx |grep -v grep |wc -l&#125;#检测nginx存活的连接数function active &#123;        curl http://$&#123;HOST&#125;:$&#123;PORT&#125;/ngx_status 2&gt;/dev/null |grep &#x27;Active&#x27; |awk &#x27;& ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/05/MySQL%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84%E4%B9%8BMHA%E9%83%A8%E7%BD%B2/" title="MySQL高可用架构之MHA部署">     <img class="post_bg" data-lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=865625540,69448143&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL高可用架构之MHA部署"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/05/MySQL%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84%E4%B9%8BMHA%E9%83%A8%E7%BD%B2/" title="MySQL高可用架构之MHA部署">MySQL高可用架构之MHA部署</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-05T07:16:38.000Z" title="发表于 2020-04-05 15:16:38">2020-04-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/MySQL/">MySQL</a></span></div><div class="content">本文是基于mysql主从环境的
+
+
+MHA组成MHA主要有Manager、Node两部分组成Manager：Manager可以部署在单独的服务器上，管理多个主从集群，也可以部署在一个从服务器上。MHA Manager会探测集群中master节点，当master出现故障时，它可以自动将一个slave提升为新的master，然后重新建立主从关系Node：所有机器均需要安装
+MHA工作原理当master出现故障后，MHA会挑选一个slave，进行数据补偿，让他做为新的master，并且重新建立主从关系。
+选主策略（1）如果从库（GTID）数据有差异，选择数据最接近master的slave成为备选主（2）如果从库数据一致，按照配置文件顺序选主（3）如果设定了权重（candidate_master=1），按照权重选主    1）默认情况下如果一个slave数据落后master大于100M的中继日志数据的话，权重不会生效    2）如果设置check_repl_delay=0，即使落后很多日志，也会成为备选主
+MHA部署实验环境192.168.186.133 mysql-master node19 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/05/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" title="MySQL主从复制">     <img class="post_bg" data-lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=865625540,69448143&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL主从复制"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/05/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" title="MySQL主从复制">MySQL主从复制</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-04-05T03:54:48.000Z" title="发表于 2020-04-05 11:54:48">2020-04-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/MySQL/">MySQL</a></span></div><div class="content">mysql主从复制原理mysql中有一种二进制日志，这种日志会记录所有修改数据库的操作，主从复制的原理实际上就是把主服务器的binlog日志复制到从服务器上执行一遍，这样从节点的数据就可以保持与主节点数据一致了。
+
+主从复制过程（1）首先因为从节点需要复制主节点的binlog日志，所以必须保证主节点启用二进制日志（log-bin=mysql-bin）（2）从节点会开启一个I/O线程扮演mysql客户端，去请求主节点的二进制日志的事件（3）主节点启动一个dump线程，检查自己二进制日志中的事件，跟对方请求的位置对比，如果不带请求位置参数，则主节点就会第一个日志文件中的第一个事件一个个发送给从节点（4）从节点收到主节点发送过来的数据，把它放到中继日志（relay log）中，并且记录该次请求到主节点哪个二进制日志文件的哪个位置（5）从节点另外一个SQL线程会把中继日志（relay log）中的事件读取出来，并且在执行一遍
+实验环境
+192.168.186.133 mysql-master192.168.186.134 mysql-slave192.168.186.135 mysql-sla ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/default-avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">twf</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">文章</div><div class="length_num">81</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">标签</div><div class="length_num">30</div></a></div><div class="card-info-data-item is-center"><a href="/categories"><div class="headline">分类</div><div class="length_num">20</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/1335402049"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1335402049" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1335402049@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/09/18/Kubernetes%E9%83%A8%E7%BD%B2redis-cluster%E9%9B%86%E7%BE%A4/" title="Kubernetes部署redis-cluster集群"><img class="aside-post-bg" data-lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4143693660,733639719&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kubernetes部署redis-cluster集群"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/09/18/Kubernetes%E9%83%A8%E7%BD%B2redis-cluster%E9%9B%86%E7%BE%A4/" title="Kubernetes部署redis-cluster集群">Kubernetes部署redis-cluster集群</a><time class="aside-post_meta post-meta-date" datetime="2020-09-18T12:37:30.000Z" title="发表于 2020-09-18 20:37:30">2020-09-18</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/09/16/Kubernetes%E9%83%A8%E7%BD%B2Prometheus/" title="Kubernetes部署Prometheus"><img class="aside-post-bg" data-lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4143693660,733639719&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kubernetes部署Prometheus"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/09/16/Kubernetes%E9%83%A8%E7%BD%B2Prometheus/" title="Kubernetes部署Prometheus">Kubernetes部署Prometheus</a><time class="aside-post_meta post-meta-date" datetime="2020-09-16T11:32:07.000Z" title="发表于 2020-09-16 19:32:07">2020-09-16</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/09/16/Kubernetes%E4%B8%AD%E4%BD%BF%E7%94%A8NFS%E7%9A%84StorageClass/" title="Kubernetes中使用NFS的StorageClass"><img class="aside-post-bg" data-lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4143693660,733639719&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kubernetes中使用NFS的StorageClass"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/09/16/Kubernetes%E4%B8%AD%E4%BD%BF%E7%94%A8NFS%E7%9A%84StorageClass/" title="Kubernetes中使用NFS的StorageClass">Kubernetes中使用NFS的StorageClass</a><time class="aside-post_meta post-meta-date" datetime="2020-09-16T11:29:55.000Z" title="发表于 2020-09-16 19:29:55">2020-09-16</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/09/15/Kubernetes%E9%83%A8%E7%BD%B2renren-fast%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" title="Kubernetes部署renren-fast开源项目"><img class="aside-post-bg" data-lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4143693660,733639719&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kubernetes部署renren-fast开源项目"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/09/15/Kubernetes%E9%83%A8%E7%BD%B2renren-fast%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" title="Kubernetes部署renren-fast开源项目">Kubernetes部署renren-fast开源项目</a><time class="aside-post_meta post-meta-date" datetime="2020-09-15T12:31:55.000Z" title="发表于 2020-09-15 20:31:55">2020-09-15</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/09/15/Kuboard%E9%83%A8%E7%BD%B2/" title="Kuboard部署"><img class="aside-post-bg" data-lazy-src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4143693660,733639719&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kuboard部署"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/09/15/Kuboard%E9%83%A8%E7%BD%B2/" title="Kuboard部署">Kuboard部署</a><time class="aside-post_meta post-meta-date" datetime="2020-09-15T12:30:42.000Z" title="发表于 2020-09-15 20:30:42">2020-09-15</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Ansible/"><span class="card-category-list-name">Ansible</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Atlas/"><span class="card-category-list-name">Atlas</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Docker/"><span class="card-category-list-name">Docker</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GitLab/"><span class="card-category-list-name">GitLab</span><span class="card-category-list-count">4</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/GitLab/Jenkins/"><span class="card-category-list-name">Jenkins</span><span class="card-category-list-count">1</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HAProxy/"><span class="card-category-list-name">HAProxy</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/JIRA/"><span class="card-category-list-name">JIRA</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Jenkins/"><span class="card-category-list-name">Jenkins</span><span class="card-category-list-count">8</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>           
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Ansible/" style="font-size: 17.71px; color: #999ea4">Ansible</a> <a href="/tags/Ansibleble/" style="font-size: 16px; color: #999">Ansibleble</a> <a href="/tags/Atlas/" style="font-size: 16px; color: #999">Atlas</a> <a href="/tags/Docker/" style="font-size: 20.29px; color: #99a4b4">Docker</a> <a href="/tags/ELK/" style="font-size: 16px; color: #999">ELK</a> <a href="/tags/GitLab/" style="font-size: 18.57px; color: #99a0a9">GitLab</a> <a href="/tags/HAProxy/" style="font-size: 16.86px; color: #999b9e">HAProxy</a> <a href="/tags/Harbor/" style="font-size: 16px; color: #999">Harbor</a> <a href="/tags/Hexo/" style="font-size: 16px; color: #999">Hexo</a> <a href="/tags/JIRA/" style="font-size: 16px; color: #999">JIRA</a> <a href="/tags/Java/" style="font-size: 16px; color: #999">Java</a> <a href="/tags/Jenkins/" style="font-size: 22px; color: #99a9bf">Jenkins</a> <a href="/tags/Keepalived/" style="font-size: 16.86px; color: #999b9e">Keepalived</a> <a href="/tags/Kubernetes/" style="font-size: 22px; color: #99a9bf">Kubernetes</a> <a href="/tags/LVS/" style="font-size: 16.86px; color: #999b9e">LVS</a> <a href="/tags/LVS-Keepalived/" style="font-size: 16px; color: #999">LVS Keepalived</a> <a href="/tags/Linux/" style="font-size: 19.43px; color: #99a2af">Linux</a> <a href="/tags/Mailx/" style="font-size: 16px; color: #999">Mailx</a> <a href="/tags/Maven/" style="font-size: 16.86px; color: #999b9e">Maven</a> <a href="/tags/MySQL/" style="font-size: 21.14px; color: #99a7ba">MySQL</a> <a href="/tags/Nginx/" style="font-size: 19.43px; color: #99a2af">Nginx</a> <a href="/tags/PTS/" style="font-size: 16px; color: #999">PTS</a> <a href="/tags/PXC/" style="font-size: 16px; color: #999">PXC</a> <a href="/tags/Redis/" style="font-size: 17.71px; color: #999ea4">Redis</a> <a href="/tags/SSH/" style="font-size: 16px; color: #999">SSH</a> <a href="/tags/SonarQube/" style="font-size: 16.86px; color: #999b9e">SonarQube</a> <a href="/tags/Tomcat/" style="font-size: 16px; color: #999">Tomcat</a> <a href="/tags/Zabbix/" style="font-size: 18.57px; color: #99a0a9">Zabbix</a> <a href="/tags/logrotate/" style="font-size: 16.86px; color: #999b9e">logrotate</a> <a href="/tags/%E8%B0%83%E4%BC%98/" style="font-size: 16px; color: #999">调优</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/08/"><span class="card-archive-list-date">八月 2020</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">四月 2020</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">文章数目 :</div><div class="webinfo-article-count">81</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">已运行时间 :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="8/7/2019 00:00:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">本站总字数 :</div><div class="webinfo-site-wordcount">46.7k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">本站访客数 :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">本站总访问量 :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://1335402049.github.io/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><div class="js-pjax"><script>function subtitleType () {
+  $.getJSON('https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json',function (data) {
+    if (true) {
+      var sub = "青春是萤火绚丽的流动星河，灿烂却也极致短暂。,安于一隅，就是浪费生命。,鸿鹄之志，不在林间。,眉毛上的汗水和眉毛下的泪水只能选择一个。,真正的大师永远都怀着一颗学徒的心".length == 0 ? new Array() : "青春是萤火绚丽的流动星河，灿烂却也极致短暂。,安于一隅，就是浪费生命。,鸿鹄之志，不在林间。,眉毛上的汗水和眉毛下的泪水只能选择一个。,真正的大师永远都怀着一颗学徒的心".split(',')
+      var both = sub.unshift(data.text)
+      typed = new Typed('#subtitle', {
+        strings: sub,
+        startDelay: 300,
+        typeSpeed: 150,
+        loop: true,
+        backSpeed: 50,
+      })
+    } else {
+      document.getElementById('subtitle').innerHTML = data.text
+    }
+  })
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><script src="/js/third-party/click_heart.js" async="async"></script><script>(function(d, w, c) {
+    w.ChatraID = 'hWsGZeyQEZFZAfnLj';
+    var s = d.createElement('script');
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+    };
+    s.async = true;
+    s.src = 'https://call.chatra.io/chatra.js';
+    if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+
+if (false) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      Chatra('openChat')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      Chatra('hide')
+    }
+    function chatBtnShow () {
+      Chatra('show')
+    }
+  }
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script></div></body></html>
