@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>通过ingress-nginx暴露apache服务</title>
+      <link href="2020/09/23/%E9%80%9A%E8%BF%87ingress-nginx%E6%9A%B4%E9%9C%B2apache%E6%9C%8D%E5%8A%A1/"/>
+      <url>2020/09/23/%E9%80%9A%E8%BF%87ingress-nginx%E6%9A%B4%E9%9C%B2apache%E6%9C%8D%E5%8A%A1/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>在之前的文章中已经介绍了ingress-nginx的部署，本文介绍下怎么使用ingress-nginx去暴露我们的服务</p><h2 id="部署服务"><a href="#部署服务" class="headerlink" title="部署服务"></a>部署服务</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apiVersion: apps/v1</span><br><span class="line">kind: Deployment</span><br><span class="line">metadata:</span><br><span class="line">  name: my-httpd</span><br><span class="line">spec:</span><br><span class="line">  replicas: 3</span><br><span class="line">  selector:</span><br><span class="line">    matchLabels:</span><br><span class="line">      app: myapp</span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        app: myapp</span><br><span class="line">    spec:</span><br><span class="line">      containers:</span><br><span class="line">        - name: httpd</span><br><span class="line">          image: httpd</span><br><span class="line">          imagePullPolicy: IfNotPresent</span><br><span class="line">          ports:</span><br><span class="line">            - containerPort: 80</span><br><span class="line">---</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: Service</span><br><span class="line">metadata:</span><br><span class="line">  name: my-httpd</span><br><span class="line">spec:</span><br><span class="line">  <span class="built_in">type</span>: ClusterIP</span><br><span class="line">  selector:</span><br><span class="line">    app: myapp</span><br><span class="line">  ports:</span><br><span class="line">    - port: 80</span><br></pre></td></tr></table></figure><p>将tomcat的svc添加至ingress-nginx中</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apiVersion: networking.k8s.io/v1beta1</span><br><span class="line">kind: Ingress</span><br><span class="line">metadata:</span><br><span class="line">  name: my-httpd</span><br><span class="line">  annotations:</span><br><span class="line">    kubernets.io/ingress.class: <span class="string">&quot;nginx&quot;</span></span><br><span class="line">spec:</span><br><span class="line">  rules:</span><br><span class="line">    - host: tomcat.twf.com</span><br><span class="line">      http:</span><br><span class="line">        paths:</span><br><span class="line">          - backend:</span><br><span class="line">              serviceName: my-httpd</span><br><span class="line">              servicePort: 80</span><br></pre></td></tr></table></figure><h2 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h2><p>在C:\Windows\System32\drivers\etc\hosts 添加一行 192.168.70.128 tomcat.twf.com ,ip和域名根据自己的ip修改<br>浏览器访问 <a href="http://tomcat.twf.com:32080/">http://tomcat.twf.com:32080/</a><br><img src= "/img/loading.gif" data-lazy-src="/2020/09/23/%E9%80%9A%E8%BF%87ingress-nginx%E6%9A%B4%E9%9C%B2apache%E6%9C%8D%E5%8A%A1/a1.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Kubernetes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kubernetes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kubernetes部署ingress-nginx</title>
+      <link href="2020/09/23/Kubernetes%E9%83%A8%E7%BD%B2ingress-nginx/"/>
+      <url>2020/09/23/Kubernetes%E9%83%A8%E7%BD%B2ingress-nginx/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>本文主要介绍nodeport方式部署ingress-nginx</p><h2 id="下载mandatory-yaml"><a href="#下载mandatory-yaml" class="headerlink" title="下载mandatory.yaml"></a>下载mandatory.yaml</h2><p>地址：<a href="https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml">https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml</a></p><h2 id="在node节点下载镜像"><a href="#在node节点下载镜像" class="headerlink" title="在node节点下载镜像"></a>在node节点下载镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#下载所需镜像</span></span><br><span class="line">docker pull tangweifeng/defaultbackend-amd64:1.5</span><br><span class="line">docker pull tangweifeng/nginx-ingress-controller:0.20.0</span><br><span class="line"><span class="comment">#重命名，改成mandatory.yaml里面镜像的名称</span></span><br><span class="line">docker tag tangweifeng/defaultbackend-amd64:1.5 k8s.gcr.io/defaultbackend-amd64:1.5</span><br><span class="line">docker tag tangweifeng/nginx-ingress-controller:0.20.0 quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.20.0</span><br></pre></td></tr></table></figure><h2 id="创建service-nodeport-yaml"><a href="#创建service-nodeport-yaml" class="headerlink" title="创建service-nodeport.yaml"></a>创建service-nodeport.yaml</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apiVersion: v1</span><br><span class="line">kind: Service</span><br><span class="line">metadata:</span><br><span class="line">  name: ingress-nginx</span><br><span class="line">  namespace: ingress-nginx</span><br><span class="line">  labels:</span><br><span class="line">    app.kubernetes.io/name: ingress-nginx</span><br><span class="line">    app.kubernetes.io/part-of: ingress-nginx</span><br><span class="line">spec:</span><br><span class="line">  <span class="built_in">type</span>: NodePort</span><br><span class="line">  ports:</span><br><span class="line">    - name: http</span><br><span class="line">      port: 80</span><br><span class="line">      targetPort: 80</span><br><span class="line">      protocol: TCP</span><br><span class="line">      nodePort: 32080  <span class="comment">#http</span></span><br><span class="line">    - name: https</span><br><span class="line">      port: 443</span><br><span class="line">      targetPort: 443</span><br><span class="line">      protocol: TCP</span><br><span class="line">      nodePort: 32443  <span class="comment">#https</span></span><br><span class="line">  selector:</span><br><span class="line">    app.kubernetes.io/name: ingress-nginx</span><br><span class="line">    app.kubernetes.io/part-of: ingress-nginx</span><br></pre></td></tr></table></figure><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">kubectl apply -f mandatory.yaml</span><br><span class="line">kubectl apply -f service-nodeport.yaml</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看组件状态</span></span><br><span class="line">kubectl get pods -n ingress-nginx</span><br><span class="line">kubectl get svc -n ingress-nginx</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Kubernetes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kubernetes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Kubernetes部署redis-cluster集群</title>
       <link href="2020/09/18/Kubernetes%E9%83%A8%E7%BD%B2redis-cluster%E9%9B%86%E7%BE%A4/"/>
       <url>2020/09/18/Kubernetes%E9%83%A8%E7%BD%B2redis-cluster%E9%9B%86%E7%BE%A4/</url>
